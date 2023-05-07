@@ -1,0 +1,91 @@
+import { gql } from "@apollo/client";
+
+export const getTipesQuery = gql`
+	subscription getTipesQuery {
+		tipes {
+			id
+			uuid
+			namatipe
+			luas
+			kapasitas
+			gambar
+			deskripsi
+			harga
+		}
+	}
+`;
+export const deleteTipesByIdMutation = gql`
+	mutation deleteTipes($id: Int!) {
+		delete_tipess_by_pk(id: $id) {
+			id
+		}
+	}
+`;
+
+export const insertTipesMutation = gql`
+	mutation insertTipesMutation(
+		$namatipe: String!
+		$luas: Int!
+		$kapasitas: Int!
+		$gambar: String!
+		$deskripsi: String!
+		$harga: Int!
+	) {
+		insert_tipes_one(
+			object: {
+				namatipe: $namatipe
+				luas: $luas
+				kapasitas: $kapasitas
+				gambar: $gambar
+				deskripsi: $deskripsi
+				harga: $harga
+			}
+		) {
+			namatipe
+		}
+	}
+`;
+
+export const getDetailTipesByIdQuery = gql`
+	query getDetailTipesByIdQuery($uuid: uuid!) {
+		tipes(where: { uuid: { _eq: $uuid } }) {
+			id
+			uuid
+			namatipe
+			luas
+			kapasitas
+			gambar
+			deskripsi
+			harga
+		}
+	}
+`;
+
+export const updateTipesMutationbyIdMutation = gql`
+	mutation updateTipesMutationbyIdMutation(
+		$uuid: uuid!
+		$namatipe: String!
+		$luas: Int!
+		$kapasitas: Int!
+		$gambar: String!
+		$deskripsi: String!
+		$harga: Int!
+	) {
+		update_tipes(
+			where: { uuid: { _eq: $uuid } }
+			_set: {
+				namatipe: $namatipe
+				luas: $luas
+				kapasitas: $kapasitas
+				gambar: $gambar
+				deskripsi: $deskripsi
+				harga: $harga
+			}
+		) {
+			affected_rows
+		}
+	}
+`;
+
+
+
