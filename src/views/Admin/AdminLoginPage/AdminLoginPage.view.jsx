@@ -1,12 +1,12 @@
 import React from "react";
-import { UserLogin } from "../../../component/molecules/User/UserLogin/UserLogin.molecules";
+import { AdminLogin } from "../../../component/molecules/Admin/AdminLogin/AdminLogin.molecules";
 import UserNavbar from "../../../component/organism/Navbar/UserNavbar/UserNavbar.organism";
 
-export const UserLoginPage = () => {
+export const AdminLoginPage = () => {
 	return (
 		<div>
 			<UserNavbar />
-			<UserLogin />
+			<AdminLogin />
 		</div>
 	);
 };

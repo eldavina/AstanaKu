@@ -58,7 +58,7 @@ export const AdminAddTipe = () => {
 	});
 
 	return (
-		<div className="input-tipe">
+		<div className="input-tipe py-5 pt-0">
 			<div className="container">
 				<div className="row pt-4">
 					<div className="row justify-content-center">

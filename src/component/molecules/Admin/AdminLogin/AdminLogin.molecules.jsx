@@ -5,7 +5,7 @@ import { store } from "../../../../config/zustand/store";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 
-export const UserLogin = () => {
+export const AdminLogin = () => {
 	const navigate = useNavigate();
 	const isLogin = store((state) => state.isLogin);
 	const setLogin = store((state) => state.setLogin);

@@ -12,7 +12,7 @@ import { UserDenahTipePage } from "../../views/User/UserDenahTipePage/UserDenahT
 import { UserDetailTipePage } from "../../views/User/UserDetailTipePage/UserDetailTipePage.view";
 import UserLandingPage from "../../views/User/UserLandingPage/UserLandingPage.view";
 import { UserListPage } from "../../views/User/UserListPage/UserListPage.view";
-import { UserLoginPage } from "../../views/User/UserLoginPage/UserLoginPage.view";
+import { AdminLoginPage } from "../../views/Admin/AdminLoginPage/AdminLoginPage.view";
 
 export const Routing = [
 	// User
@@ -41,12 +41,12 @@ export const Routing = [
 		element: <UserContactUsPage />,
 		isPrivate: false,
 	},
+	// Admin
 	{
 		path: "/login",
-		element: <UserLoginPage />,
+		element: <AdminLoginPage />,
 		isPrivate: false,
 	},
-	// Admin
 	{
 		path: "/-",
 		element: <AdminLandingPage />,

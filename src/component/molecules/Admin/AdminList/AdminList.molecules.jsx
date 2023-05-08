@@ -12,9 +12,7 @@ const AdminList = ({ handleDeleteList }) => {
 	});
 
 	return (
-		<div className="pt-3">
-			<hr />
-
+		<div className="pt-3" style={{ background: "#F8F8FF" }}>
 			<h2 className="" style={{ textAlign: "center" }}>
 				List Ahli Kubur
 			</h2>
@@ -23,7 +21,7 @@ const AdminList = ({ handleDeleteList }) => {
 					<input
 						type="text"
 						className="form-control"
-						placeholder="Recipient's username"
+						placeholder="Masukkan nama ahli kubur yang dicari disini"
 						aria-label="Recipient's username"
 						aria-describedby="button-addon2"
 						value={nama}

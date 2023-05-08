@@ -21,7 +21,7 @@ const AdminCardList = () => {
 						<input
 							type="text"
 							className="form-control"
-							placeholder="Recipient's username"
+							placeholder="Masukkan nama tipe yang dicari disini"
 							aria-label="Recipient's username"
 							aria-describedby="button-addon2"
 							value={namatipe}

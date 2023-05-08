@@ -11,9 +11,7 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 	});
 
 	return (
-		<div className="pt-3">
-			<hr />
-
+		<div className="pt-3" style={{ background: "#F8F8FF" }}>
 			<h2 className="" style={{ textAlign: "center" }}>
 				Tipe Pemakaman
 			</h2>
@@ -22,7 +20,7 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 					<input
 						type="text"
 						className="form-control"
-						placeholder="Recipient's username"
+						placeholder="Masukkan tipe pemakaman yang dicari disini"
 						aria-label="Recipient's username"
 						aria-describedby="button-addon2"
 						value={namatipe}
@@ -34,7 +32,7 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 				</div>
 			</div>
 			<div className="table-responsive p-5">
-				<table className="table table-bordered align-self-center">
+				<table className="table table-bordered align-self-center bg-white">
 					<thead>
 						<tr>
 							<th className="header_namatipe">Nama Tipe</th>
