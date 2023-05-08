@@ -151,6 +151,7 @@ export const AdminAddList = () => {
 												id="nama"
 												name="nama"
 												required=""
+												placeholder="Masukkan Nama Ahli Kubur"
 												// defaultValue={list.nama}
 												value={formik.values.nama}
 												onChange={formik.handleChange}
@@ -164,7 +165,7 @@ export const AdminAddList = () => {
 										</div>
 
 										{/* Tipe/No */}
-										<div className="mb-3 col-5">
+										<div className="mb-3 col-6">
 											<label htmlFor="tipeno" className="form-label">
 												Tipe/No{" "}
 											</label>

@@ -61,7 +61,10 @@ const AdminContactUs = () => {
 								</div>
 								<br />
 								<div>
-									<button type="submit" className="btn btn-primary" id="btn-submit">
+									<button
+										type="submit"
+										className="btn btn-info text-white"
+										id="btn-submit">
 										Submit
 									</button>
 								</div>
@@ -69,7 +72,7 @@ const AdminContactUs = () => {
 						</div>
 					</div>
 					<div className="col-md-6" id="contact-us-text">
-						<div className="d-flex justify-content-center">
+						<div className="me-0">
 							<div>
 								<p>
 									<img src={contactus} className="w-100"></img>

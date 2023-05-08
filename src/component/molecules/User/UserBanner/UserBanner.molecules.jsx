@@ -29,7 +29,7 @@ const UserBanner = () => {
 								<br />
 								Ada 3 tipe dengan bermacam fasilitas yang tersedia <br />
 							</p>
-							<a href="#">
+							<a href="/denahtipe">
 								<button className="btn btn-info" style={{ color: "white" }}>
 									Lihat Tipe Pemakaman
 								</button>

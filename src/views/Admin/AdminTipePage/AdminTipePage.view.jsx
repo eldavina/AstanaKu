@@ -9,7 +9,7 @@ import {
 } from "../../../config/Apollo/lists";
 
 export const AdminTipePage = () => {
-	const { data: tipes } = useSubscription(getTipesQuery);
+	// const { data: tipes } = useSubscription(getTipesQuery);
 
 	const [deleteTipes, { loading: loadingdelete, error }] = useMutation(
 		deleteTipesByIdMutation
@@ -28,7 +28,10 @@ export const AdminTipePage = () => {
 		<div>
 			<AdminNavbar />
 			<AdminAddTipe />
-			<AdminTipe tipes={tipes} handleDeleteTipe={handleDeleteTipe} />
+			<AdminTipe
+				//  tipes={tipes}
+				handleDeleteTipe={handleDeleteTipe}
+			/>
 		</div>
 	);
 };

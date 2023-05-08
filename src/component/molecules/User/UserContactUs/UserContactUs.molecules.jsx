@@ -60,7 +60,10 @@ export const UserContactUs = () => {
 								</div>
 								<br />
 								<div>
-									<button type="submit" className="btn btn-primary" id="btn-submit">
+									<button
+										type="submit"
+										className="btn btn-info text-white"
+										id="btn-submit">
 										Submit
 									</button>
 								</div>

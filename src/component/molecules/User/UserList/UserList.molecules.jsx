@@ -1,13 +1,17 @@
 import React from "react";
-import { useFormik, Formik, Form, Field } from "formik";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useSubscription } from "@apollo/client";
+import { getListsQuery } from "../../../../config/Apollo/lists";
 
 // const ListItem = ({ createproducts, handleDelete,  }) => {
-const AdminList = ({ lists, handleDeleteList }) => {
+const UserList = () => {
+	const [nama, setNama] = useState("");
+	const { data, loading } = useSubscription(getListsQuery, {
+		variables: { nama: `%${nama}%` },
+	});
+
 	return (
 		<div className="pt-3">
-			<hr />
-
 			<h2 className="" style={{ textAlign: "center" }}>
 				List Ahli Kubur
 			</h2>
@@ -19,6 +23,8 @@ const AdminList = ({ lists, handleDeleteList }) => {
 						placeholder="Recipient's username"
 						aria-label="Recipient's username"
 						aria-describedby="button-addon2"
+						value={nama}
+						onChange={(e) => setNama(e.target.value)}
 					/>
 					<button className="btn btn-outline-info" type="button" id="button-addon2">
 						Cari
@@ -31,13 +37,13 @@ const AdminList = ({ lists, handleDeleteList }) => {
 						<tr>
 							<th className="header_nama">Nama Ahli Kubur</th>
 							<th className="header_tipeno">Tipe/No</th>
-							<th className="header_lahir">Lahir</th>
-							<th className="header_wafat">Wafat</th>
+							<th className="header_lahir">{"Lahir (tahun-bulan-tanggal)"}</th>
+							<th className="header_wafat">{"Wafat (tahun-bulan-tanggal)"}</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						{lists?.lists.map((list, idx) => (
+						{data?.lists.map((list, idx) => (
 							<tr key={idx}>
 								<td className="list_nama">{list.nama}</td>
 								<td className="list_tipeno">{list.tipeno}</td>
@@ -54,4 +60,4 @@ const AdminList = ({ lists, handleDeleteList }) => {
 	);
 };
 
-export default AdminList;
+export default UserList;

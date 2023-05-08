@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../../assets/logo.png";
+import { store } from "../../../../config/zustand/store";
 
 const UserNavbar = () => {
+	const isLogin = store((state) => state.isLogin);
 	return (
 		<header>
 			<nav className="navbar navbar-expand-lg bg-light shadow-sm p-0 mb-0 bg-white rounded ">
@@ -29,7 +31,7 @@ const UserNavbar = () => {
 						</a>
 						<a href="#" className="text-decoration-none text-info mx-3">
 							<Link to="/denahtipe" className="text-info">
-								Denah&Tipe
+								Denah & Tipe
 							</Link>
 						</a>
 						<a href="#" className="text-decoration-none text-info mx-3">
@@ -43,9 +45,15 @@ const UserNavbar = () => {
 							</Link>
 						</a>
 						<a href="#" className="text-decoration-none text-info mx-3">
-							<Link to="/login" className="text-info">
-								Login
-							</Link>
+							{isLogin ? (
+								<Link to="/tipe-" className="text-info">
+									Admin
+								</Link>
+							) : (
+								<Link to="/login" className="text-info">
+									Login
+								</Link>
+							)}
 						</a>
 					</div>
 				</div>

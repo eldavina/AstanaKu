@@ -5,12 +5,14 @@ import UserNavbar from "../../../component/organism/Navbar/UserNavbar/UserNavbar
 import { getListsQuery } from "../../../config/Apollo/lists";
 
 export const UserListPage = () => {
-	const { data: lists } = useSubscription(getListsQuery);
+	// const { data: lists } = useSubscription(getListsQuery);
 
 	return (
 		<div>
 			<UserNavbar />
-			<UserList lists={lists} />
+			<UserList
+			// lists={lists}
+			/>
 		</div>
 	);
 };

@@ -14,6 +14,8 @@ export const AdminAddTipe = () => {
 		namatipe: Yup.string()
 			.required()
 			.matches(regex, "Nama tipe tidak boleh mengandung simbol"),
+		panjang: Yup.number().required(),
+		lebar: Yup.number().required(),
 		luas: Yup.number().required(),
 		kapasitas: Yup.number().required(),
 		gambar: Yup.string().required(),
@@ -25,6 +27,8 @@ export const AdminAddTipe = () => {
 		initialValues: {
 			// id: "",
 			namatipe: "",
+			panjang: "",
+			lebar: "",
 			luas: "",
 			kapasitas: "",
 			gambar: "",
@@ -38,6 +42,8 @@ export const AdminAddTipe = () => {
 			insertTipes({
 				variables: {
 					namatipe: values.namatipe,
+					panjang: values.panjang,
+					lebar: values.lebar,
 					luas: values.luas,
 					kapasitas: values.kapasitas,
 					gambar: values.gambar,
@@ -46,7 +52,7 @@ export const AdminAddTipe = () => {
 				},
 			});
 
-			if (window.confirm("Data tipe pemakaman berhasil di-edit!"));
+			if (window.confirm("Data tipe pemakaman berhasil ditambahkan!"));
 			formik.resetForm();
 		},
 	});
@@ -79,6 +85,7 @@ export const AdminAddTipe = () => {
 											id="namatipe"
 											name="namatipe"
 											required=""
+											placeholder="Masukkan Nama Tipe Pemakaman"
 											value={formik.values.namatipe}
 											onChange={formik.handleChange}
 											onEdit={formik.values.namatipe}
@@ -91,6 +98,45 @@ export const AdminAddTipe = () => {
 										</div>
 									</div>
 
+									{/* Ukuran Makam */}
+									<div className="mb-3 col-6">
+										<label htmlFor="luas" className="form-label">
+											Ukuran Makam m
+										</label>
+										<div className="d-flex">
+											<input
+												// className={`form-control ${formik.errors.name && `is-invalid`}`}
+												className={`form-control`}
+												type="number"
+												id="panjang"
+												name="panjang"
+												required=""
+												placeholder="Panjang"
+												value={formik.values.panjang}
+												onChange={formik.handleChange}
+												onEdit={formik.values.panjang}
+												// onEdit={handleEdit}
+												// onChange={nameProduct}
+												data-testid="inputluas-input"
+											/>
+											<a className="align-self-center mx-2 text-dark">X</a>
+											<input
+												// className={`form-control ${formik.errors.name && `is-invalid`}`}
+												className={`form-control`}
+												type="number"
+												id="lebar"
+												name="lebar"
+												required=""
+												placeholder="Lebar"
+												value={formik.values.lebar}
+												onChange={formik.handleChange}
+												onEdit={formik.values.lebar}
+												// onEdit={handleEdit}
+												// onChange={nameProduct}
+												data-testid="inputluas-input"
+											/>
+										</div>
+									</div>
 									{/* Luas */}
 									<div className="mb-3 col-6">
 										<label htmlFor="luas" className="form-label">
@@ -104,6 +150,7 @@ export const AdminAddTipe = () => {
 											id="luas"
 											name="luas"
 											required=""
+											placeholder="Masukkan Luas Pemakaman"
 											value={formik.values.luas}
 											onChange={formik.handleChange}
 											onEdit={formik.values.luas}
@@ -118,7 +165,7 @@ export const AdminAddTipe = () => {
 									</div>
 
 									{/* Kapasitas */}
-									<div className="mb-3 col-5">
+									<div className="mb-3 col-6">
 										<label htmlFor="kapasitas" className="form-label">
 											Kapasitas{" "}
 										</label>
@@ -152,18 +199,19 @@ export const AdminAddTipe = () => {
 									{/* Gambar Pemakaman */}
 									<div className="mb-3">
 										<label htmlFor="gambar" className="form-label">
-											Gambar Pemakaman
+											Link Gambar Pemakaman
 										</label>
 										<div className="col-6">
 											<input
 												// className={`form-control btn btn-primary ${
 												// 	formik.errors.image && `is-invalid`
 												// }`}
-												className={`form-control btn btn-info`}
-												type="file"
+												className={`form-control`}
+												type="text"
 												id="gambar"
 												name="gambar"
 												required=""
+												placeholder="Masukkan Link Gambar"
 												value={formik.values.gambar}
 												onChange={formik.handleChange}
 												onEdit={formik.values.gambar}
@@ -184,6 +232,7 @@ export const AdminAddTipe = () => {
 											id="deskripsi"
 											name="deskripsi"
 											required=""
+											placeholder="Masukkan Deskripsi Pemakaman"
 											value={formik.values.deskripsi}
 											onChange={formik.handleChange}
 											onEdit={formik.values.deskripsi}
@@ -194,11 +243,11 @@ export const AdminAddTipe = () => {
 
 									{/* Harga */}
 									<label htmlFor="harga" className="form-label">
-										Harga{" "}
+										Harga jt{" "}
 									</label>
 									{/* <div>{formik.errors.price && alert(`Product Price Harus Di Isi!`)}</div> */}
 									<div className="mb-2">
-										<div className="col-4">
+										<div className="col-6">
 											<input
 												type="number"
 												// className={`form-control ${formik.errors.price && `is-invalid`}`}

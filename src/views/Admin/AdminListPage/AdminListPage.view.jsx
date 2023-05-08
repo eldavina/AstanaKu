@@ -9,7 +9,7 @@ import {
 } from "../../../config/Apollo/lists";
 
 export const AdminListPage = () => {
-	const { data: lists } = useSubscription(getListsQuery);
+	// const { data: lists } = useSubscription(getListsQuery);
 
 	const [deleteLists, { loading: loadingdelete, error }] = useMutation(
 		deleteListsByIdMutation
@@ -28,7 +28,10 @@ export const AdminListPage = () => {
 		<div>
 			<AdminNavbar />
 			<AdminAddList />
-			<AdminList lists={lists} handleDeleteList={handleDeleteList} />
+			<AdminList
+				//  lists={lists}
+				handleDeleteList={handleDeleteList}
+			/>
 		</div>
 	);
 };

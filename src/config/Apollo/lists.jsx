@@ -1,8 +1,10 @@
 import { gql } from "@apollo/client";
 
+// subscription getListsQuery {
+// 	lists {
 export const getListsQuery = gql`
-	subscription getListsQuery {
-		lists {
+	subscription getListsQuery($nama: String!) {
+		lists(where: { nama: { _ilike: $nama } }) {
 			id
 			uuid
 			nama
@@ -66,11 +68,13 @@ export const updateListsMutationbyUuidMutation = gql`
 `;
 
 export const getTipesQuery = gql`
-	subscription getTipesQuery {
-		tipes {
+	subscription getTipesQuery($namatipe: String!) {
+		tipes(where: { namatipe: { _ilike: $namatipe } }) {
 			id
 			uuid
 			namatipe
+			panjang
+			lebar
 			luas
 			kapasitas
 			gambar
@@ -90,6 +94,8 @@ export const deleteTipesByIdMutation = gql`
 export const insertTipesMutation = gql`
 	mutation insertTipesMutation(
 		$namatipe: String!
+		$panjang: Int!
+		$lebar: Int!
 		$luas: Int!
 		$kapasitas: Int!
 		$gambar: String!
@@ -99,6 +105,8 @@ export const insertTipesMutation = gql`
 		insert_tipes_one(
 			object: {
 				namatipe: $namatipe
+				panjang: $panjang
+				lebar: $lebar
 				luas: $luas
 				kapasitas: $kapasitas
 				gambar: $gambar
@@ -117,6 +125,8 @@ export const getDetailTipesByUuidQuery = gql`
 			uuid
 			id
 			namatipe
+			panjang
+			lebar
 			luas
 			kapasitas
 			gambar
@@ -130,7 +140,10 @@ export const updateTipesMutationbyUuidMutation = gql`
 	mutation updateTipesMutationbyUuidMutation(
 		$uuid: uuid!
 		$namatipe: String!
+		$panjang: Int!
+		$lebar: Int!
 		$luas: Int!
+		$gambar: String!
 		$kapasitas: Int!
 		$deskripsi: String!
 		$harga: Int!
@@ -139,7 +152,10 @@ export const updateTipesMutationbyUuidMutation = gql`
 			where: { uuid: { _eq: $uuid } }
 			_set: {
 				namatipe: $namatipe
+				panjang: $panjang
+				lebar: $lebar
 				luas: $luas
+				gambar: $gambar
 				kapasitas: $kapasitas
 				deskripsi: $deskripsi
 				harga: $harga

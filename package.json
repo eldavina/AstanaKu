@@ -28,7 +28,8 @@
 		"redux-persist": "^6.0.0",
 		"redux-thunk": "^2.4.2",
 		"toolkit": "^1.5.4",
-		"yup": "^1.0.2"
+		"yup": "^1.0.2",
+		"zustand": "^4.3.8"
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",

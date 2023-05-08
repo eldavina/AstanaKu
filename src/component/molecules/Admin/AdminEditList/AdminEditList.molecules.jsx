@@ -129,7 +129,7 @@ const AdminEditList = () => {
 										</div>
 
 										{/* Tipe/No */}
-										<div className="mb-3 col-5">
+										<div className="mb-3 col-6">
 											<label htmlFor="tipeno" className="form-label">
 												Tipe/No{" "}
 											</label>

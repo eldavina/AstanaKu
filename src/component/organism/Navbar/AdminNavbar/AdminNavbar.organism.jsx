@@ -1,8 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import logo from "../../../../assets/logo.png";
+import { store } from "../../../../config/zustand/store";
 
 const AdminNavbar = () => {
+	const setLogin = store((state) => state.setLogin);
+	const navigate = useNavigate();
+	const handleLogout = () => {
+		if (window.confirm("Logout?")) {
+			navigate("/");
+			setLogin(false);
+		}
+	};
 	return (
 		<header>
 			<nav className="navbar navbar-expand-lg bg-light shadow-sm p-0 mb-0 bg-white rounded ">
@@ -29,7 +38,7 @@ const AdminNavbar = () => {
 						</a>
 						<a href="#" className="text-decoration-none text-info mx-3">
 							<Link to="/denahtipe-" className="text-info">
-								Denah&Tipe
+								Denah & Tipe
 							</Link>
 						</a>
 						<a href="#" className="text-decoration-none text-info mx-3">
@@ -39,7 +48,7 @@ const AdminNavbar = () => {
 						</a>
 						<a href="#" className="text-decoration-none text-info mx-3">
 							<Link to="/list-" className="text-info">
-								List
+								Tambah List
 							</Link>
 						</a>
 						<a href="#" className="text-decoration-none text-info mx-3">
@@ -47,7 +56,10 @@ const AdminNavbar = () => {
 								Contact Us
 							</Link>
 						</a>
-						<a href="#" className="text-decoration-none text-info mx-3">
+						<a
+							href="#"
+							className="text-decoration-none text-info mx-3"
+							onClick={handleLogout}>
 							<Link to="/login" className="text-info">
 								Logout
 							</Link>
