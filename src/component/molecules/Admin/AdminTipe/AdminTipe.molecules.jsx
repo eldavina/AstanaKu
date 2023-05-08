@@ -26,9 +26,6 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 						value={namatipe}
 						onChange={(e) => setNamaTipe(e.target.value)}
 					/>
-					<button className="btn btn-outline-info" type="button" id="button-addon2">
-						Cari
-					</button>
 				</div>
 			</div>
 			<div className="table-responsive p-5">

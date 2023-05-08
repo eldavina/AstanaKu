@@ -27,12 +27,6 @@ const AdminCardList = () => {
 							value={namatipe}
 							onChange={(e) => setNamaTipe(e.target.value)}
 						/>
-						<button
-							className="btn btn-outline-info bg-white"
-							type="button"
-							id="button-addon2">
-							Cari
-						</button>
 					</div>
 				</div>
 				<div className="row gap-2 gap-md-5 pt-3 pb-5 justify-content-center">

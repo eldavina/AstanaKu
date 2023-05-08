@@ -26,9 +26,6 @@ const UserList = () => {
 						value={nama}
 						onChange={(e) => setNama(e.target.value)}
 					/>
-					<button className="btn btn-outline-info" type="button" id="button-addon2">
-						Cari
-					</button>
 				</div>
 			</div>
 			<div className="table-responsive p-5">
