@@ -14,7 +14,7 @@ export const UserDetailTipe = () => {
 	}
 
 	function handleSubmitWa() {
-		const pesanWa = `https://api.whatsapp.com/send?phone=628813345505&text=Halo%20Astanaku!%20Saya%20ingin%20mengetahui%20produk%20ini!%0Ahttps://astanaku.vercel.app/${location.pathname}`;
+		const pesanWa = `https://api.whatsapp.com/send?phone=628813345505&text=Halo%20Astanaku!%20Saya%20ingin%20mengetahui%20produk%20ini!%0Ahttps://astanaku.vercel.app${location.pathname}`;
 		window.open(pesanWa, "_blank");
 	}
 	return (
