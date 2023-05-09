@@ -14,8 +14,8 @@ export const UserContactUs = () => {
 	}
 	return (
 		<div>
-			<div id="contact-us">
-				<div className="row align-items-center" style={{ padding: "" }}>
+			<div id="contact-us" className="container">
+				<div className="row m-0 align-items-center" style={{ padding: "" }}>
 					<div className="col">
 						<div className="d-flex justify-content-center">
 							<form style={{ lineHeight: 1 }} id="form" onSubmit={handleSubmit}>
@@ -71,13 +71,7 @@ export const UserContactUs = () => {
 						</div>
 					</div>
 					<div className="col-md-6" id="contact-us-text">
-						<div className="d-flex justify-content-center">
-							<div>
-								<p>
-									<img src={contactus} className="w-100"></img>
-								</p>
-							</div>
-						</div>
+						<img src={contactus} className="w-100"></img>
 					</div>
 				</div>
 			</div>

@@ -3,7 +3,7 @@ import React from "react";
 import login from "../../../../assets/login.jpg";
 import { store } from "../../../../config/zustand/store";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const AdminLogin = () => {
 	const navigate = useNavigate();
@@ -30,6 +30,9 @@ export const AdminLogin = () => {
 			formik.resetForm();
 		},
 	});
+	if (isLogin) {
+		return <Navigate to="/-" />;
+	}
 
 	return (
 		<div>

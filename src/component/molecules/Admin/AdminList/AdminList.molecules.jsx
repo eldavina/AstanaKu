@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSubscription } from "@apollo/client";
 import { getListsQuery } from "../../../../config/Apollo/lists";
+import Loading from "../../../atoms/Loading";
 
 const AdminList = ({ handleDeleteList }) => {
 	const [nama, setNama] = useState("");
@@ -12,12 +13,12 @@ const AdminList = ({ handleDeleteList }) => {
 	});
 
 	return (
-		<div className="pt-3" style={{ background: "#F8F8FF" }}>
+		<div className="pt-3 bg-white rounded shadow">
 			<h2 className="" style={{ textAlign: "center" }}>
 				List Ahli Kubur
 			</h2>
 			<div className="d-flex justify-content-center">
-				<div className="input-group mb-3 w-50">
+				<div className="input-group mb-2 w-50">
 					<input
 						type="text"
 						className="form-control"
@@ -29,9 +30,9 @@ const AdminList = ({ handleDeleteList }) => {
 					/>
 				</div>
 			</div>
-			<div className="table-responsive p-5">
+			<div className="table-responsive p-5 pt-3">
 				<table className="table table-bordered">
-					<thead>
+					<thead className="table-light">
 						<tr>
 							<th className="header_nama">Nama Ahli Kubur</th>
 							<th className="header_tipeno">Tipe/No</th>
@@ -90,6 +91,19 @@ const AdminList = ({ handleDeleteList }) => {
 					{/* <tbody id="datatable"></tbody> */}
 				</table>
 				{/* Akhir Tabel Data */}
+				{loading && (
+					<div
+						className="d-flex justify-content-center "
+						style={{ height: "110px" }}>
+						<Loading />
+					</div>
+				)}
+				{data?.lists.length == 0 && (
+					<div className="d-flex justify-content-center w-100 py-4">
+						{" "}
+						Tidak ditemukan!!!
+					</div>
+				)}
 			</div>
 		</div>
 	);

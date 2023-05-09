@@ -3,6 +3,8 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getTipesQuery } from "../../../../config/Apollo/lists";
+import Loading from "../../../atoms/Loading";
+// import Loading from "../../../../assets/loading.svg";
 
 export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 	const [namatipe, setNamaTipe] = useState("");
@@ -11,12 +13,12 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 	});
 
 	return (
-		<div className="pt-3" style={{ background: "#F8F8FF" }}>
+		<div className="pt-3 rounded shadow bg-white">
 			<h2 className="" style={{ textAlign: "center" }}>
 				Tipe Pemakaman
 			</h2>
 			<div className="d-flex justify-content-center">
-				<div className="input-group mb-3 w-50">
+				<div className="input-group w-50">
 					<input
 						type="text"
 						className="form-control"
@@ -28,17 +30,17 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 					/>
 				</div>
 			</div>
-			<div className="table-responsive p-5">
-				<table className="table table-bordered align-self-center bg-white">
-					<thead>
+			<div className="table-responsive p-5 pt-3">
+				<table className="table table-bordered align-self-center bg-white rounded">
+					<thead className="table-light">
 						<tr>
 							<th className="header_namatipe">Nama Tipe</th>
-							<th className="header_luas">Ukuran m</th>
-							<th className="header_luas">Luas m2</th>
+							<th className="header_luas">Ukuran{"(m)"}</th>
+							<th className="header_luas">Luas{"(m2)"}</th>
 							<th className="header_kapasitas">Kapasitas</th>
 							<th className="header_gambar">Gambar</th>
 							<th className="header_deskripsi">Deskripsi</th>
-							<th className="header_harga">Harga jt</th>
+							<th className="header_harga">Harga{"(jt)"}</th>
 							<th className="header_action">Action</th>
 						</tr>
 					</thead>
@@ -52,13 +54,22 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 								</td>
 								<td className="tipes_luas">{tipe.luas}</td>
 								<td className="tipes_kapasitas">{tipe.kapasitas}</td>
-								<td
-									className="d-inline-block tipes_gambar text-truncate"
-									style={{ width: "150px" }}>
-									{" "}
-									<a href={tipe.gambar}>{tipe.gambar}</a>
+								<td className=" tipes_gambar ">
+									<a
+										href={tipe.gambar}
+										target="_blank"
+										className="d-inline-block text-truncate"
+										style={{ width: "200px" }}>
+										{tipe.gambar}
+									</a>
 								</td>
-								<td className="tipes_deskripsi">{tipe.deskripsi}</td>
+								<td className="tipes_deskripsi">
+									<p
+										className="tipes_deskripsi text-truncate"
+										style={{ width: "200px" }}>
+										{tipe.deskripsi}
+									</p>
+								</td>
 								<td className="tipes_harga">{tipe.harga}</td>
 								<td className="d-flex tipes_action">
 									<button
@@ -102,6 +113,19 @@ export const AdminTipe = ({ tipes, handleDeleteTipe }) => {
 					{/* <tbody id="datatable"></tbody> */}
 				</table>
 				{/* Akhir Tabel Data */}
+				{data?.tipes.length == 0 && (
+					<div className="d-flex justify-content-center w-100 py-4">
+						{" "}
+						Tidak ditemukan!!!
+					</div>
+				)}
+				{loading && (
+					<div
+						className="d-flex justify-content-center "
+						style={{ height: "110px" }}>
+						<Loading />
+					</div>
+				)}
 			</div>
 		</div>
 	);

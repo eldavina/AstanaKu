@@ -17,8 +17,8 @@ export const UserDetailTipe = () => {
 		window.open(pesanWa, "_blank");
 	}
 	return (
-		<div>
-			<div className="pt-3" style={{ paddingLeft: "90px" }}>
+		<div className="bg-white shadow mx-4 mt-3 rounded">
+			<div className="pt-3" style={{ paddingLeft: "80px" }}>
 				<button onClick={handleSubmit} class="btn btn-outline-info">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ export const UserDetailTipe = () => {
 			</div>
 			{tipes?.tipes.map((item, idx) => (
 				<div id="contact-us" key={idx}>
-					<div className="row mx-4 gap-3 pt-3" style={{ padding: "50px" }}>
+					<div className="row mx-3  pt-3" style={{ padding: "50px" }}>
 						<div className="col-md-6" id="contact-us-text">
 							<div className="d-flex justify-content-center">
 								<div>
@@ -49,7 +49,7 @@ export const UserDetailTipe = () => {
 								</div>
 							</div>
 						</div>
-						<div className="col mt-0 gap-3">
+						<div className="col mt-0 gap-2">
 							<div>
 								<a className="fw-normal text-dark" style={{ fontSize: "20px" }}>
 									Detail Tipe

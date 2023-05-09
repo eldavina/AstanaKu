@@ -3,11 +3,11 @@ import denah from "../../../../assets/peta.jpg";
 
 export const UserDenahTipe = () => {
 	return (
-		<div className="pt-3">
+		<div className="pt-3 bg-white shadow">
 			<div className="Denah text-center">
 				<div className="">
 					<h2 className="">Denah Lokasi Pemakaman Astana</h2>
-					<img src={denah} className="w-50"></img>
+					<img src={denah} className="w-100"></img>
 				</div>
 			</div>
 		</div>

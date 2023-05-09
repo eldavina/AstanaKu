@@ -43,285 +43,209 @@ export const AdminAddList = () => {
 		},
 	});
 	console.log(formik.values);
-	// const valueOption = [
-	// 	"A-1",
-	// 	"A-2",
-	// 	"A-3",
-	// 	"A-4",
-	// 	"A-5",
-	// 	"A-6",
-	// 	"A-7",
-	// 	"A-8",
-	// 	"A-9",
-	// 	"A-10",
-	// 	"A-11",
-	// 	"A-12",
-	// 	"A-13",
-	// 	"A-14",
-	// 	"A-15",
-	// 	"A-16",
-	// 	"A-17",
-	// 	"A-18",
-	// 	"A-19",
-	// 	"A-20",
-	// 	"B-1a",
-	// 	"B-1b",
-	// 	"B-2a",
-	// 	"B-2b",
-	// 	"B-3a",
-	// 	"B-3b",
-	// 	"B-4a",
-	// 	"B-4b",
-	// 	"B-5a",
-	// 	"B-5b",
-	// 	"B-6a",
-	// 	"B-6b",
-	// 	"B-7a",
-	// 	"B-7b",
-	// 	"B-8a",
-	// 	"B-8b",
-	// 	"B-9a",
-	// 	"B-9b",
-	// 	"B-10a",
-	// 	"B-10b",
-	// 	"B-11a",
-	// 	"B-11b",
-	// 	"B-12a",
-	// 	"B-12b",
-	// 	"C-1a",
-	// 	"C-1b",
-	// 	"C-1c",
-	// 	"C-1d",
-	// 	"C-2a",
-	// 	"C-2b",
-	// 	"C-2c",
-	// 	"C-2d",
-	// 	"C-3a",
-	// 	"C-3b",
-	// 	"C-3c",
-	// 	"C-3d",
-	// 	"C-4a",
-	// 	"C-4b",
-	// 	"C-4c",
-	// 	"C-4d",
-	// 	"C-5a",
-	// 	"C-5b",
-	// 	"C-5c",
-	// 	"C-5d",
-	// 	"C-6a",
-	// 	"C-6b",
-	// 	"C-6c",
-	// 	"C-6d",
-	// 	"C-7a",
-	// 	"C-7b",
-	// 	"C-7c",
-	// 	"C-7d",
-	// 	"C-8a",
-	// 	"C-8b",
-	// 	"C-8c",
-	// 	"C-8d",
-	// ];
 	return (
-		<div className="py-5">
-			<div className="add-data">
-				<div className="container">
-					<div className="row pt-4">
-						<div className="row justify-content-center">
-							<div className="col-5">
-								<div className="col">
-									<form
-										className="justify-content-end needs-validation"
-										id="form"
-										noValidate=""
-										onSubmit={formik.handleSubmit}>
-										<h2 className="" style={{ textAlign: "center" }}>
-											Tambah Data Ahli Kubur
-										</h2>
-
-										{/* Nama */}
-										<div className="mb-3 col-6">
-											<label htmlFor="nama" className="form-label">
-												Nama Ahli Kubur{" "}
-											</label>
-											{/* <div>{formik.errors.name && alert(`Product Name Harus Di Isi!`)}</div> */}
-											<input
-												className={`form-control ${formik.errors.name && `is-invalid`}`}
-												// className={`form-control `}
-												type="text"
-												id="nama"
-												name="nama"
-												required=""
-												placeholder="Masukkan Nama Ahli Kubur"
-												// defaultValue={list.nama}
-												value={formik.values.nama}
-												onChange={formik.handleChange}
-												// onEdit={handleEdit}
-												// onChange={nameProduct}
-												data-testid="inputname-input"
-											/>
-											<div className="invalid-feedback" data-testid="inputname-error">
-												Nama tidak boleh mengandung simbol
-											</div>
-										</div>
-
-										{/* Tipe/No */}
-										<div className="mb-3 col-6">
-											<label htmlFor="tipeno" className="form-label">
-												Tipe/No{" "}
-											</label>
-											<br />
-											{/* <div>{formik.errors.category && alert(`Product Category Harus Di Isi!`)}</div> */}
-											<select
-												// className={`form-select ${formik.errors.tipeno && `is-invalid`}`}
-												className={`form-select`}
-												aria-label="tipeno"
-												placeholder="Choose...."
-												id="tipeno"
-												name="tipeno"
-												required=""
-												// defaultValue={list.tipeno}
-												value={formik.values.tipeno}
-												onChange={formik.handleChange}
-
-												// onEdit={handleEdit}
-											>
-												<option value={""}>Tipe/No ....</option>
-												<option value={"A-1a"}>A-1a</option>
-												<option value={"A-1b"}>A-1b</option>
-												<option value={"A-1c"}>A-1c</option>
-												<option value={"A-1d"}>A-1d</option>
-												<option value={"A-2a"}>A-2a</option>
-												<option value={"A-2b"}>A-2b</option>
-												<option value={"A-2c"}>A-2c</option>
-												<option value={"A-2d"}>A-2d</option>
-												<option value={"A-3a"}>A-3a</option>
-												<option value={"A-3b"}>A-3b</option>
-												<option value={"A-3c"}>A-3c</option>
-												<option value={"A-3d"}>A-3d</option>
-												<option value={"A-4a"}>A-4a</option>
-												<option value={"A-4b"}>A-4b</option>
-												<option value={"A-4c"}>A-4c</option>
-												<option value={"A-4d"}>A-4d</option>
-												<option value={"A-5a"}>A-5a</option>
-												<option value={"A-5b"}>A-5b</option>
-												<option value={"A-5c"}>A-5c</option>
-												<option value={"A-5d"}>A-5d</option>
-												<option value={"A-6a"}>A-6a</option>
-												<option value={"A-6b"}>A-6b</option>
-												<option value={"A-6c"}>A-6c</option>
-												<option value={"A-6d"}>A-6d</option>
-												<option value={"A-7a"}>A-7a</option>
-												<option value={"A-7b"}>A-7b</option>
-												<option value={"A-7c"}>A-7c</option>
-												<option value={"A-7d"}>A-7d</option>
-												<option value={"A-8a"}>A-8a</option>
-												<option value={"A-8b"}>A-8b</option>
-												<option value={"A-8c"}>A-8c</option>
-												<option value={"A-8d"}>A-8d</option>
-												<option value={"B-1"}>B-1</option>
-												<option value={"B-2"}>B-2</option>
-												<option value={"B-3"}>B-3</option>
-												<option value={"B-4"}>B-4</option>
-												<option value={"B-5"}>B-5</option>
-												<option value={"B-6"}>B-6</option>
-												<option value={"B-7"}>B-7</option>
-												<option value={"B-8"}>B-8</option>
-												<option value={"B-9"}>B-9</option>
-												<option value={"B-10"}>B-10</option>
-												<option value={"B-11"}>B-11</option>
-												<option value={"B-12"}>B-12</option>
-												<option value={"B-13"}>B-13</option>
-												<option value={"B-14"}>B-14</option>
-												<option value={"B-15"}>B-15</option>
-												<option value={"B-16"}>B-16</option>
-												<option value={"B-17"}>B-17</option>
-												<option value={"B-18"}>B-18</option>
-												<option value={"B-19"}>B-19</option>
-												<option value={"B-20"}>B-20</option>
-												<option value={"C-1a"}>C-1a</option>
-												<option value={"C-1b"}>C-1b</option>
-												<option value={"C-2a"}>C-2a</option>
-												<option value={"C-2b"}>C-2b</option>
-												<option value={"C-3a"}>C-3a</option>
-												<option value={"C-3b"}>C-3b</option>
-												<option value={"C-4a"}>C-4a</option>
-												<option value={"C-4b"}>C-4b</option>
-												<option value={"C-5a"}>C-5a</option>
-												<option value={"C-5b"}>C-5b</option>
-												<option value={"C-6a"}>C-6a</option>
-												<option value={"C-6b"}>C-6b</option>
-												<option value={"C-7a"}>C-7a</option>
-												<option value={"C-7b"}>C-7b</option>
-												<option value={"C-8a"}>C-8a</option>
-												<option value={"C-8b"}>C-8b</option>
-												<option value={"C-9a"}>C-9a</option>
-												<option value={"C-9b"}>C-9b</option>
-												<option value={"C-10a"}>C-10a</option>
-												<option value={"C-10b"}>C-10b</option>
-												<option value={"C-11a"}>C-111</option>
-												<option value={"C-11b"}>C-11b</option>
-												<option value={"C-12a"}>C-12a</option>
-												<option value={"C-12b"}>C-12b</option>
-											</select>
-											{/* <div className="invalid-feedback">{formik.errors.category}</div> */}
-										</div>
-
-										{/* Lahir */}
-										<div className="mb-3 col-6">
-											<label htmlFor="lahir" className="form-label">
-												Lahir{" "}
-											</label>
-											<br />
-											<input
-												className={`form-control `}
-												type="date"
-												id="lahir-input"
-												name="lahir"
-												// value={dateLahir}
-												// onChange={handleDateLahirChange}
-												// defaultValue={list.dateLahir}
-												value={formik.values.lahir}
-												onChange={formik.handleChange}
-												// onEdit={handleEdit}
-											/>
-										</div>
-										{/* Wafat */}
-										<div className="mb-3 col-6">
-											<label htmlFor="wafat" className="form-label">
-												Wafat{" "}
-											</label>
-											<br />
-											<input
-												className={`form-control `}
-												type="date"
-												id="wafat-input"
-												name="wafat"
-												// value={dateWafat}
-												// onChange={handleDateWafatChange}
-												// defaultValue={list.dateWafat}
-												value={formik.values.wafat}
-												onChange={formik.handleChange}
-												// onEdit={handleEdit}
-											/>
-										</div>
-										{/* Submit */}
-										<div className="col-auto ">
-											<button
-												type="submit"
-												// onClick={formik.handleSubmit}
-												className="btn btn-info w-100 text-white"
-												data-bs-toggle="modal"
-												data-bs-target="#submit"
-												id="button-add"
-												data-testid="btnSubmit">
-												Submit
-											</button>
-										</div>
-									</form>
-								</div>
+		<div className="input-tipe py-5 pt-0">
+			<div className="row p-2 rounded bg-white shadow">
+				<div className="col-7 my-3">
+					<h2 className="mb-3  fs-4">Tambah Ahli Kubur</h2>
+					<form
+						className="needs-validation"
+						id="form"
+						noValidate=""
+						onSubmit={formik.handleSubmit}>
+						{/* Nama */}
+						<div className="mb-3 row">
+							<div className="col ">
+								<label htmlFor="nama" className="form-label">
+									Nama Ahli Kubur{" "}
+								</label>
+							</div>
+							{/* <div>{formik.errors.name && alert(`Product Name Harus Di Isi!`)}</div> */}
+							<div className="col ">
+								<input
+									className={`form-control ${formik.errors.name && `is-invalid`}`}
+									// className={`form-control `}
+									type="text"
+									id="nama"
+									name="nama"
+									required=""
+									placeholder="Masukkan Nama Ahli Kubur"
+									// defaultValue={list.nama}
+									value={formik.values.nama}
+									onChange={formik.handleChange}
+									// onEdit={handleEdit}
+									// onChange={nameProduct}
+									data-testid="inputname-input"
+								/>
+							</div>
+							<div className="invalid-feedback" data-testid="inputname-error">
+								Nama tidak boleh mengandung simbol
 							</div>
 						</div>
-					</div>
+
+						{/* Tipe/No */}
+						<div className="mb-3 row">
+							<div className="col ">
+								<label htmlFor="tipeno" className="form-label">
+									Tipe/No{" "}
+								</label>
+							</div>
+							<div className="col ">
+								{/* <div>{formik.errors.category && alert(`Product Category Harus Di Isi!`)}</div> */}
+								<select
+									// className={`form-select ${formik.errors.tipeno && `is-invalid`}`}
+									className={`form-select`}
+									aria-label="tipeno"
+									placeholder="Choose...."
+									id="tipeno"
+									name="tipeno"
+									required=""
+									// defaultValue={list.tipeno}
+									value={formik.values.tipeno}
+									onChange={formik.handleChange}
+
+									// onEdit={handleEdit}
+								>
+									<option value={""}>Tipe/No ....</option>
+									<option value={"A-1a"}>A-1a</option>
+									<option value={"A-1b"}>A-1b</option>
+									<option value={"A-1c"}>A-1c</option>
+									<option value={"A-1d"}>A-1d</option>
+									<option value={"A-2a"}>A-2a</option>
+									<option value={"A-2b"}>A-2b</option>
+									<option value={"A-2c"}>A-2c</option>
+									<option value={"A-2d"}>A-2d</option>
+									<option value={"A-3a"}>A-3a</option>
+									<option value={"A-3b"}>A-3b</option>
+									<option value={"A-3c"}>A-3c</option>
+									<option value={"A-3d"}>A-3d</option>
+									<option value={"A-4a"}>A-4a</option>
+									<option value={"A-4b"}>A-4b</option>
+									<option value={"A-4c"}>A-4c</option>
+									<option value={"A-4d"}>A-4d</option>
+									<option value={"A-5a"}>A-5a</option>
+									<option value={"A-5b"}>A-5b</option>
+									<option value={"A-5c"}>A-5c</option>
+									<option value={"A-5d"}>A-5d</option>
+									<option value={"A-6a"}>A-6a</option>
+									<option value={"A-6b"}>A-6b</option>
+									<option value={"A-6c"}>A-6c</option>
+									<option value={"A-6d"}>A-6d</option>
+									<option value={"A-7a"}>A-7a</option>
+									<option value={"A-7b"}>A-7b</option>
+									<option value={"A-7c"}>A-7c</option>
+									<option value={"A-7d"}>A-7d</option>
+									<option value={"A-8a"}>A-8a</option>
+									<option value={"A-8b"}>A-8b</option>
+									<option value={"A-8c"}>A-8c</option>
+									<option value={"A-8d"}>A-8d</option>
+									<option value={"B-1"}>B-1</option>
+									<option value={"B-2"}>B-2</option>
+									<option value={"B-3"}>B-3</option>
+									<option value={"B-4"}>B-4</option>
+									<option value={"B-5"}>B-5</option>
+									<option value={"B-6"}>B-6</option>
+									<option value={"B-7"}>B-7</option>
+									<option value={"B-8"}>B-8</option>
+									<option value={"B-9"}>B-9</option>
+									<option value={"B-10"}>B-10</option>
+									<option value={"B-11"}>B-11</option>
+									<option value={"B-12"}>B-12</option>
+									<option value={"B-13"}>B-13</option>
+									<option value={"B-14"}>B-14</option>
+									<option value={"B-15"}>B-15</option>
+									<option value={"B-16"}>B-16</option>
+									<option value={"B-17"}>B-17</option>
+									<option value={"B-18"}>B-18</option>
+									<option value={"B-19"}>B-19</option>
+									<option value={"B-20"}>B-20</option>
+									<option value={"C-1a"}>C-1a</option>
+									<option value={"C-1b"}>C-1b</option>
+									<option value={"C-2a"}>C-2a</option>
+									<option value={"C-2b"}>C-2b</option>
+									<option value={"C-3a"}>C-3a</option>
+									<option value={"C-3b"}>C-3b</option>
+									<option value={"C-4a"}>C-4a</option>
+									<option value={"C-4b"}>C-4b</option>
+									<option value={"C-5a"}>C-5a</option>
+									<option value={"C-5b"}>C-5b</option>
+									<option value={"C-6a"}>C-6a</option>
+									<option value={"C-6b"}>C-6b</option>
+									<option value={"C-7a"}>C-7a</option>
+									<option value={"C-7b"}>C-7b</option>
+									<option value={"C-8a"}>C-8a</option>
+									<option value={"C-8b"}>C-8b</option>
+									<option value={"C-9a"}>C-9a</option>
+									<option value={"C-9b"}>C-9b</option>
+									<option value={"C-10a"}>C-10a</option>
+									<option value={"C-10b"}>C-10b</option>
+									<option value={"C-11a"}>C-111</option>
+									<option value={"C-11b"}>C-11b</option>
+									<option value={"C-12a"}>C-12a</option>
+									<option value={"C-12b"}>C-12b</option>
+								</select>
+								{/* <div className="invalid-feedback">{formik.errors.category}</div> */}
+							</div>
+						</div>
+
+						{/* Lahir */}
+						<div className="mb-3 row">
+							<div className="col ">
+								<label htmlFor="lahir" className="form-label">
+									Lahir{" "}
+								</label>
+							</div>
+							<div className="col ">
+								<input
+									className={`form-control `}
+									type="date"
+									id="lahir-input"
+									name="lahir"
+									// value={dateLahir}
+									// onChange={handleDateLahirChange}
+									// defaultValue={list.dateLahir}
+									value={formik.values.lahir}
+									onChange={formik.handleChange}
+									// onEdit={handleEdit}
+								/>
+							</div>
+						</div>
+						{/* Wafat */}
+						<div className="mb-3 row">
+							<div className="col ">
+								<label htmlFor="wafat" className="form-label">
+									Wafat{" "}
+								</label>
+							</div>
+							<div className="col ">
+								<input
+									className={`form-control `}
+									type="date"
+									id="wafat-input"
+									name="wafat"
+									// value={dateWafat}
+									// onChange={handleDateWafatChange}
+									// defaultValue={list.dateWafat}
+									value={formik.values.wafat}
+									onChange={formik.handleChange}
+									// onEdit={handleEdit}
+								/>
+							</div>
+						</div>
+						{/* Submit */}
+						<div className="col-auto ">
+							<button
+								type="submit"
+								// onClick={formik.handleSubmit}
+								className="btn btn-info w-100 text-white"
+								data-bs-toggle="modal"
+								data-bs-target="#submit"
+								id="button-add"
+								data-testid="btnSubmit">
+								Submit
+							</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

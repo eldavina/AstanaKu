@@ -3,15 +3,16 @@ import { useQuery, useSubscription } from "@apollo/client";
 import { getTipesQuery } from "../../../../config/Apollo/lists";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Loading from "../../../atoms/Loading";
 
 const AdminCardList = () => {
 	const [limit, setLimit] = useState(3);
 	const [namatipe, setNamaTipe] = useState("");
-	const { data: tipes } = useSubscription(getTipesQuery, {
+	const { data: tipes, loading } = useSubscription(getTipesQuery, {
 		variables: { namatipe: `%${namatipe}%` },
 	});
 	return (
-		<div style={{ background: "#F8F8FF" }}>
+		<div className="bg-white rounded shadow">
 			<div className="Tipe text-center pt-4">
 				<h2>Tipe Makam</h2>
 			</div>
@@ -32,10 +33,10 @@ const AdminCardList = () => {
 				<div className="row gap-2 gap-md-5 pt-3 pb-5 justify-content-center">
 					{tipes?.tipes.map((item, idx) => (
 						<div key={idx} className="col-md-3 ">
-							<div className="card shadow bg-white rounded">
+							<div className="card shadow bg-white rounded overflow-hidden">
 								<img
 									src={item.gambar}
-									style={{ width: "305px" }}
+									style={{ width: "249px" }}
 									className="card-img-top"
 									alt="..."
 								/>
@@ -51,6 +52,19 @@ const AdminCardList = () => {
 							</div>
 						</div>
 					))}
+					{tipes?.tipes.length == 0 && (
+						<div className="d-flex justify-content-center w-100 py-4">
+							{" "}
+							Tidak ditemukan!!!
+						</div>
+					)}
+					{loading && (
+						<div
+							className="d-flex justify-content-center "
+							style={{ height: "110px" }}>
+							<Loading />
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
