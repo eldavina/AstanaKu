@@ -1,24 +1,27 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { getDetailTipesByUuidQuery } from "../../../../config/Apollo/lists";
+import Loading from "../../../atoms/Loading.jsx";
 
 export const AdminDetailTipe = () => {
 	const { id } = useParams();
-	const { data: tipes } = useQuery(getDetailTipesByUuidQuery, {
+	const { data: tipes, loading } = useQuery(getDetailTipesByUuidQuery, {
 		variables: { uuid: id },
 	});
+	const location = useLocation();
+	console.log(location);
 	function handleSubmit() {
 		window.history.back();
 	}
 
 	function handleSubmitWa() {
-		const pesanWa = `https://api.whatsapp.com/send?phone=628813345505&text=Halo%20Astanaku!%20Saya%20ingin%20mengetahui%20produk%20ini!`;
+		const pesanWa = `https://api.whatsapp.com/send?phone=628813345505&text=Halo%20Astanaku!%20Saya%20ingin%20mengetahui%20produk%20ini!%0Ahttps://astanaku.vercel.app/${location.pathname}`;
 		window.open(pesanWa, "_blank");
 	}
 	return (
-		<div>
-			<div className="pt-3" style={{ paddingLeft: "90px" }}>
+		<div className="bg-white shadow mx-4 mt-3 rounded">
+			<div className="pt-3" style={{ paddingLeft: "80px" }}>
 				<button onClick={handleSubmit} class="btn btn-outline-info">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -37,9 +40,14 @@ export const AdminDetailTipe = () => {
 					Kembali
 				</button>
 			</div>
+			{/* {loading && (
+				<div className="d-flex justify-content-center " style={{ height: "110px" }}>
+					<Loading />
+				</div>
+			)} */}
 			{tipes?.tipes.map((item, idx) => (
 				<div id="contact-us" key={idx}>
-					<div className="row mx-4 gap-3 pt-3" style={{ padding: "50px" }}>
+					<div className="row mx-3  pt-3" style={{ padding: "50px" }}>
 						<div className="col-md-6" id="contact-us-text">
 							<div className="d-flex justify-content-center">
 								<div>
@@ -49,7 +57,7 @@ export const AdminDetailTipe = () => {
 								</div>
 							</div>
 						</div>
-						<div className="col mt-0 gap-3">
+						<div className="col mt-0 gap-2">
 							<div>
 								<a className="fw-normal text-dark" style={{ fontSize: "20px" }}>
 									Detail Tipe

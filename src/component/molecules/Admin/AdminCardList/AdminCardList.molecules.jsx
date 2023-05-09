@@ -44,7 +44,7 @@ const AdminCardList = () => {
 									<h5 className="card-title">{item.namatipe}</h5>
 									<p className="card-text">Rp. {item.harga}.000.000</p>
 									<button className="btn btn-info">
-										<Link className="text-white" to={`/detailtipe/${item.uuid}`}>
+										<Link className="text-white" to={`/detailtipe-/${item.uuid}`}>
 											Lihat Detail
 										</Link>
 									</button>
